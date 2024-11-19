@@ -1,0 +1,32 @@
+<section class="container">
+    <h2 class="text-center">Reservas</h2>
+    <a href="/reserva/create" class="btn btn-primary">Cadastrar Nova Reserva</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Data</th>
+                <th>Valor Total</th>
+                <th>Id do Cliente</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each dados}}
+            <tr>
+                <td>{{dataValues.id}}</td>
+                <td>{{dataValues.data_reserva}}</td>
+                <td>{{dataValues.valor_total}}</td>
+                <td>{{dataValues.clienteId}}</td>
+                <td>
+                    <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </td>
+            </tr>
+
+            {{>modalDelete2 idItem = dataValues.id}}
+
+            {{/each}}
+        </tbody>
+    </table>
+</section>
+

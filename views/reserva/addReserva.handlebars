@@ -1,0 +1,28 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Reserva</h1>
+    <form action="/reserva/store" method="post">
+        <section class="mb-2">
+            <label for="data_reserva">Data da Reserva</label>
+            <input type="date" name="data_reserva" class="form-control">
+        </section>
+
+        <section class="mb-2">
+            <label for="valor_total">Valor Total</label>
+            <input type="number" name="valor_total" class="form-control" step="0.01">
+        </section>
+
+        <section class="mb-2">
+            <label for="clienteId">Cliente</label>
+            <select name="clienteId" class="form-select">
+                <option value="">Selecione um Cliente</option>
+                {{#each clientes}}
+                    <option value="{{dataValues.id}}">{{dataValues.clienteId}}</option>
+                {{/each}}
+            </select>
+        </section>
+
+        <section class="mb-2 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </section>
+    </form>
+</section>

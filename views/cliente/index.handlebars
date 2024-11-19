@@ -1,0 +1,33 @@
+<section class="container">
+    <h2 class="text-center">Clientes Cadastrados</h2>
+    <a href="/cliente/create" class="btn btn-primary">Cadastrar Novo Cliente</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each dados}}
+            <tr>
+                <td>{{dataValues.id}}</td>
+                <td>{{dataValues.nome}}</td>
+                <td>{{dataValues.sobrenome}}</td>
+                <td>{{dataValues.email}}</td>
+                <td>{{dataValues.telefone}}</td>
+                <td>
+                    <a href="" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal{{dataValues.id}}">Excluir</a>
+                </td>
+            </tr>
+
+            {{>modalDelete idItem = dataValues.id}}
+
+            {{/each}}
+        </tbody>
+    </table>
+</section>

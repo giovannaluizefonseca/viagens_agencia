@@ -1,0 +1,28 @@
+<section class="container">
+    <h1 class="text-center">Cadastro de Cliente</h1>
+    <form action="/cliente/store" method="post">
+        <section class="mb-2">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" class="form-control">
+        </section>
+
+        <section class="mb-2">
+            <label for="sobrenome">Sobrenome</label>
+            <input type="text" name="sobrenome" class="form-control">
+        </section>
+
+        <section class="mb-2">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" class="form-control">
+        </section>
+
+        <section class="mb-2">
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" class="form-control">
+        </section>
+
+        <section class="mb-2 d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+        </section>
+    </form>
+</section>
