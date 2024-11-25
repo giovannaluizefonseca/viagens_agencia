@@ -3,7 +3,7 @@ const router = express.Router();
 const cliente = require('../models/cliente');
 const reserva = require('../models/reserva');
 
-// Rota para cadastrar um cliente
+
 router.post('/store', async (req, res) => {
     const resultado = await cliente.create({
         nome: req.body.nome,
@@ -19,7 +19,7 @@ router.post('/store', async (req, res) => {
     }
 });
 
-// Rota para exibir os dados dos clientes
+
 router.get('/', async (req, res) => {
     const resultado = await cliente.findAll();
     if (resultado) {
@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-// Rota para deletar um cliente
+
 router.get('/destroy/:id', async (req, res) => {
     const resultado = await cliente.destroy({
         where: {
@@ -45,7 +45,7 @@ router.get('/destroy/:id', async (req, res) => {
     }
 });
 
-// Rota para exibir o formulário de cadastro de cliente
+
 router.get('/create', (req, res) => {
     res.render('cliente/addCliente');
 });

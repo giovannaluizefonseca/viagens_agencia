@@ -1,7 +1,7 @@
 const { sequelizeDb, sequelizeConfig } = require('./database');
 const cliente = require('./cliente');
 
-// Criando a tabela de reservas
+
 const reserva = sequelizeConfig.define(
     'reserva',
     {
@@ -10,8 +10,8 @@ const reserva = sequelizeConfig.define(
     }
 );
 
-// Relacionamento: um cliente pode ter várias reservas
-cliente.hasMany(reserva, { onDelete: 'CASCADE', onUpdate: 'CASCADE' });
+
+cliente.hasMany(reserva, {onDelete: 'CASCADE', onUpdate: 'CASCADE'});
 reserva.belongsTo(cliente); 
 
 reserva.sync(); 
